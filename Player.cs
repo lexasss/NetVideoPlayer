@@ -6,13 +6,17 @@ class Player
 {
     public void PlayFromFolder(string folder)
     {
-        var proc = CallPlayer(folder, "mirror-rear");
-        proc.Exited += (s, e) =>
+        var videos = new string[] { "mirror-rear", "mirror-left", "mirror-right" };
+        foreach (var video in videos)
         {
-            _processes.Remove(proc);
-        };
+            var proc = CallPlayer(folder, video);
+            proc.Exited += (s, e) =>
+            {
+                _processes.Remove(proc);
+            };
 
-        _processes.Add(proc);
+            _processes.Add(proc);
+        }
     }
 
     // Internal
