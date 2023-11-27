@@ -7,12 +7,12 @@ class Options
     public int Port { get; set; } = 4900;
     public string VLCPlayerPath { get; set; } = @"C:\Program Files\VideoLAN\VLC\vlc.exe";
     public string VLCOptions { get; set; } = "--fullscreen --no-video-title-show --play-and-exit";
-    public string VideoFolder { get; set; } = @".\videos";
+    public string VideoFolder { get; set; } = @"C:\Users\TAUCHI\Documents\MyExperiments\3.0\AMICI\Blind-Spot_Experiment2";
     public Dictionary<string, int> Screens { get; set; } = new()
     {
-        { "mirror-rear", 1 },
-        { "mirror-left", 2 },
-        { "mirror-right", 3 },
+        { "front-view", 0 },
+        { "mirror-left", 3 },
+        { "mirror-right", 2 },
     };
 
     public static Options Load()

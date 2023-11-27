@@ -6,7 +6,7 @@ class Player
 {
     public void PlayFromFolder(string folder)
     {
-        var videos = new string[] { "mirror-rear", "mirror-left", "mirror-right" };
+        var videos = _options.Screens.Keys;
         foreach (var video in videos)
         {
             var proc = CallPlayer(folder, video);
