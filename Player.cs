@@ -34,12 +34,12 @@ class Player
         }
 
         var videoFile = Path.Combine(_options.VideoFolder, folder, $"{screenName}.mp4");
-        var cmdCommand = $"\"{_options.VLCPlayerPath}\" {vlcOptions} {videoFile}";
+        var cmdCommand = $"\"{_options.VLCPlayerPath}\" {vlcOptions} \"{videoFile}\"";
         Console.WriteLine($"Playing {cmdCommand}");
 
         Process proc = new Process();
         proc.StartInfo.FileName = "CMD.exe";
-        proc.StartInfo.Arguments = $"/c {cmdCommand}";
+        proc.StartInfo.Arguments = $"/c \"{cmdCommand}\"";
         proc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
         proc.Start();
 
