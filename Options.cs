@@ -31,7 +31,9 @@ class Options
             }
         }
 
-        return new Options();
+        var defaultOptions = new Options();
+        defaultOptions.Save();
+        return defaultOptions;
     }
 
     public void Save()
